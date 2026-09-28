@@ -1,0 +1,1 @@
+fetch('http://localhost:3000/produtos').then(r=>r.json()).then(lista=>{const a=document.getElementById('produtos');lista.forEach(p=>a.innerHTML+=`<div class="card"><h3>${p.nome}</h3><p>R$ ${p.preco}</p><button onclick="alerta(${p.id})">Avise quando baixar</button></div>`)});function alerta(id){fetch('http://localhost:3000/alerta/'+id,{method:'POST'});alert('Alerta registrado!')}
